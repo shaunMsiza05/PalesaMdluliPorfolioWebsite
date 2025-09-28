@@ -66,9 +66,9 @@ const Navigation = () => {
               size="sm" 
               className="hover-lift"
               onClick={() => {
-                // Create a download link for CV
+                // Download the actual CV PDF
                 const link = document.createElement('a');
-                link.href = '#';
+                link.href = '/Palesa_Mdluli_CV.pdf';
                 link.download = 'Palesa_Mdluli_CV.pdf';
                 document.body.appendChild(link);
                 link.click();
@@ -115,9 +115,9 @@ const Navigation = () => {
                   size="sm" 
                   className="w-full hover-lift"
                   onClick={() => {
-                    // Create a download link for CV
+                    // Download the actual CV PDF
                     const link = document.createElement('a');
-                    link.href = '#';
+                    link.href = '/Palesa_Mdluli_CV.pdf';
                     link.download = 'Palesa_Mdluli_CV.pdf';
                     document.body.appendChild(link);
                     link.click();

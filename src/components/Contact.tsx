@@ -164,9 +164,9 @@ const Contact = () => {
                   size="lg" 
                   className="hover-lift"
                   onClick={() => {
-                    // Create a download link for CV
+                    // Download the actual CV PDF
                     const link = document.createElement('a');
-                    link.href = '#';
+                    link.href = '/Palesa_Mdluli_CV.pdf';
                     link.download = 'Palesa_Mdluli_CV.pdf';
                     document.body.appendChild(link);
                     link.click();
