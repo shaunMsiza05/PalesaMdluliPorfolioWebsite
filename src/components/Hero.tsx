@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Download, Mail, Phone, MapPin, Mic, Radio, Volume2 } from "lucide-react";
+import { generatePalesaCVPDF } from "@/utils/generatePDF";
 
 const Hero = () => {
   return (
@@ -57,15 +58,7 @@ const Hero = () => {
                   size="lg" 
                   variant="outline" 
                   className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary hover-lift"
-                  onClick={() => {
-                    // Download the actual CV PDF
-                    const link = document.createElement('a');
-                    link.href = '/Palesa_Mdluli_CV.pdf';
-                    link.download = 'Palesa_Mdluli_CV.pdf';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                  }}
+                  onClick={generatePalesaCVPDF}
                 >
                   <Download className="w-4 h-4 mr-2" />
                   Download CV

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Download } from "lucide-react";
+import { generatePalesaCVPDF } from "@/utils/generatePDF";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,15 +66,7 @@ const Navigation = () => {
               variant={isScrolled ? "default" : "secondary"} 
               size="sm" 
               className="hover-lift"
-              onClick={() => {
-                // Download the actual CV PDF
-                const link = document.createElement('a');
-                link.href = '/Palesa_Mdluli_CV.pdf';
-                link.download = 'Palesa_Mdluli_CV.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
+              onClick={generatePalesaCVPDF}
             >
               <Download className="w-4 h-4 mr-2" />
               CV
@@ -114,15 +107,7 @@ const Navigation = () => {
                   variant="default" 
                   size="sm" 
                   className="w-full hover-lift"
-                  onClick={() => {
-                    // Download the actual CV PDF
-                    const link = document.createElement('a');
-                    link.href = '/Palesa_Mdluli_CV.pdf';
-                    link.download = 'Palesa_Mdluli_CV.pdf';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                  }}
+                  onClick={generatePalesaCVPDF}
                 >
                   <Download className="w-4 h-4 mr-2" />
                   Download CV

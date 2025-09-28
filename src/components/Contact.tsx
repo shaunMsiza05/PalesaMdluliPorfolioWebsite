@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send, Download } from "lucide-react";
+import { generatePalesaCVPDF } from "@/utils/generatePDF";
 
 const Contact = () => {
   const contactInfo = [
@@ -163,15 +164,7 @@ const Contact = () => {
                   variant="secondary" 
                   size="lg" 
                   className="hover-lift"
-                  onClick={() => {
-                    // Download the actual CV PDF
-                    const link = document.createElement('a');
-                    link.href = '/Palesa_Mdluli_CV.pdf';
-                    link.download = 'Palesa_Mdluli_CV.pdf';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                  }}
+                  onClick={generatePalesaCVPDF}
                 >
                   <Download className="w-4 h-4 mr-2" />
                   Download CV (PDF)
