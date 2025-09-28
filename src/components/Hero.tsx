@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Download, Mail, Phone, MapPin } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.jpg";
+import { Download, Mail, Phone, MapPin, Mic, Radio, Volume2 } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -54,26 +53,53 @@ const Hero = () => {
                   <Mail className="w-4 h-4 mr-2" />
                   Get In Touch
                 </Button>
-                <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary hover-lift">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary hover-lift"
+                  onClick={() => {
+                    // Create a download link for CV
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.download = 'Palesa_Mdluli_CV.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
+                >
                   <Download className="w-4 h-4 mr-2" />
                   Download CV
                 </Button>
               </div>
             </div>
 
-            {/* Profile Photo */}
+            {/* Professional Visual Element */}
             <div className="flex justify-center md:justify-end">
               <div className="relative">
-                <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-glow hover-lift">
-                  <img 
-                    src={profilePhoto} 
-                    alt="Palesa Mdluli - Professional Portrait" 
-                    className="w-full h-full object-cover"
-                  />
+                {/* Main Broadcasting Symbol */}
+                <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-accent/20 to-accent-light/20 backdrop-blur-sm border border-accent/30 shadow-glow hover-lift flex items-center justify-center">
+                  <div className="relative">
+                    {/* Radio Waves Animation */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-32 h-32 rounded-full border-2 border-accent/40 animate-ping"></div>
+                      <div className="absolute w-24 h-24 rounded-full border-2 border-accent/60 animate-ping animation-delay-200"></div>
+                      <div className="absolute w-16 h-16 rounded-full border-2 border-accent/80 animate-ping animation-delay-400"></div>
+                    </div>
+                    
+                    {/* Center Microphone Icon */}
+                    <div className="relative z-10 bg-gradient-to-br from-accent to-accent-light p-6 rounded-full shadow-xl">
+                      <Mic className="w-12 h-12 text-accent-foreground" />
+                    </div>
+                  </div>
                 </div>
-                {/* Decorative elements */}
-                <div className="absolute -top-4 -right-4 w-16 h-16 bg-accent rounded-full opacity-20 animate-pulse"></div>
-                <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-accent-light rounded-full opacity-30 animate-pulse delay-1000"></div>
+                
+                {/* Floating Icons */}
+                <div className="absolute -top-4 -right-4 bg-accent/20 backdrop-blur-sm border border-accent/30 rounded-full p-3 animate-pulse">
+                  <Radio className="w-6 h-6 text-accent" />
+                </div>
+                <div className="absolute -bottom-6 -left-6 bg-accent-light/20 backdrop-blur-sm border border-accent-light/30 rounded-full p-2 animate-pulse delay-1000">
+                  <Volume2 className="w-5 h-5 text-accent-light" />
+                </div>
               </div>
             </div>
             

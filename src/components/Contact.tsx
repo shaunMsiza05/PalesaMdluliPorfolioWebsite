@@ -159,7 +159,20 @@ const Contact = () => {
                 <p className="mb-6 opacity-90">
                   Get a comprehensive overview of my experience and qualifications
                 </p>
-                <Button variant="secondary" size="lg" className="hover-lift">
+                <Button 
+                  variant="secondary" 
+                  size="lg" 
+                  className="hover-lift"
+                  onClick={() => {
+                    // Create a download link for CV
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.download = 'Palesa_Mdluli_CV.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
+                >
                   <Download className="w-4 h-4 mr-2" />
                   Download CV (PDF)
                 </Button>

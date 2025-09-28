@@ -65,6 +65,15 @@ const Navigation = () => {
               variant={isScrolled ? "default" : "secondary"} 
               size="sm" 
               className="hover-lift"
+              onClick={() => {
+                // Create a download link for CV
+                const link = document.createElement('a');
+                link.href = '#';
+                link.download = 'Palesa_Mdluli_CV.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
             >
               <Download className="w-4 h-4 mr-2" />
               CV
@@ -101,7 +110,20 @@ const Navigation = () => {
               ))}
               
               <div className="px-4">
-                <Button variant="default" size="sm" className="w-full hover-lift">
+                <Button 
+                  variant="default" 
+                  size="sm" 
+                  className="w-full hover-lift"
+                  onClick={() => {
+                    // Create a download link for CV
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.download = 'Palesa_Mdluli_CV.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
+                >
                   <Download className="w-4 h-4 mr-2" />
                   Download CV
                 </Button>
